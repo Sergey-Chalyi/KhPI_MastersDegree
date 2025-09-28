@@ -96,27 +96,18 @@ gantt
 |  FR4 | Імпорт/Експорт   |    Medium | IT3      | Backend          |
 | NFR1 | Аутентифікація   |      High | SEC1     | Backend/DevOps   |
 
-### 9. Мережна діаграма (PERT/CPM) — DOT (Graphviz)
+### 9. Мережна діаграма (PERT/CPM)
 
 (приклад зі стислими тривалостями у днях)
 
-```dot
-digraph network {
-  node [shape=box];
-  A [label="Аналіз (14d)"];
-  B [label="Дизайн (14d)"];
-  C [label="Backend (28d)"];
-  D [label="Frontend (28d)"];
-  E [label="Тестування (14d)"];
-  F [label="Розгортання (7d)"];
-
-  A -> B;
-  B -> C;
-  B -> D;
-  C -> E;
-  D -> E;
-  E -> F;
-}
+```mermaid
+graph LR
+    A["Аналіз (14d)"] --> B["Дизайн (14d)"]
+    B --> C["Backend (28d)"]
+    B --> D["Frontend (28d)"]
+    C --> E["Тестування (14d)"]
+    D --> E
+    E --> F["Розгортання (7d)"]
 ```
 
 Критичний шлях у прикладі: Аналіз → Дизайн → Backend → Тестування → Розгортання (тривалість = 14+14+28+14+7 = 77 днів). Якщо frontend і backend однакові за тривалістю, обираємо шлях, що дає максимальну суму.
