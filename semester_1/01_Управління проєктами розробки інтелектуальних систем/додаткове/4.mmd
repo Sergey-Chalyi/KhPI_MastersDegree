@@ -1,0 +1,24 @@
+flowchart TD
+  Lakes[Водойми]
+  Rivers[Річки]
+  Ground[Підземні води]
+  Atmos[Атмосфера]
+  Clouds[Хмари]
+  Soil[Ґрунт]
+  Plants[Рослини]
+  Precip[Опади / дощ/сніг]
+  Evap[Випаровування/транспірація]
+
+  Lakes -->|випаровування| Atmos
+  Rivers -->|випаровування| Atmos
+  Plants -->|транспірація| Atmos
+  Atmos --> Clouds
+  Clouds --> Precip
+  Precip --> Soil
+  Precip --> Lakes
+  Precip --> Rivers
+  Soil --> Ground
+  Ground --> Rivers
+  Rivers --> Lakes
+  Soil --> Plants
+  Precip --> Ground

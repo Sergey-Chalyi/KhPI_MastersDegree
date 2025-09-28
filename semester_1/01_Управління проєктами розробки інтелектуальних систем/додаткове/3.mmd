@@ -1,0 +1,19 @@
+flowchart TD
+  Grass[Трава - продуцент]
+  HerbInsects[Травоїдні комахи]
+  Beetles[Жуки - розкладники]
+  Rabbits[Кролики]
+  Sparrows[Горобці]
+  Hawks[Яструби]
+  Wolves[Вовки]
+  Soil[Ґрунт та поживні речовини]
+
+  Grass --> HerbInsects
+  Grass --> Rabbits
+  Grass --> Beetles
+  HerbInsects --> Sparrows
+  HerbInsects --> Hawks
+  Rabbits --> Wolves
+  Sparrows --> Hawks
+  Beetles --> Soil
+  Soil --> Grass
