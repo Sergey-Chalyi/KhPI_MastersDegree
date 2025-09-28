@@ -1,0 +1,18 @@
+%% Use Case Diagram for Chat-bot of Plumbing E-shop
+graph TD
+    User["👤 Користувач"]
+    
+    User --> UC1("Перегляд каталогу")
+    User --> UC2("Пошук товару")
+    User --> UC3("Отримати консультацію")
+    User --> UC4("Оформлення замовлення")
+    User --> UC5("Оплата")
+    User --> UC6("Відстеження доставки")
+    User --> UC7("FAQ")
+    
+    %% Styling for use cases
+    classDef usecase fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef actor fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    
+    class UC1,UC2,UC3,UC4,UC5,UC6,UC7 usecase
+    class User actor
